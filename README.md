@@ -1,0 +1,1 @@
+# vykupbaterii.cz

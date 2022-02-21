@@ -1,0 +1,396 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+
+    /* debug border */
+    .dbgb {
+        border: 1px dotted blue!important;
+    }
+    * {
+    /* @apply dbgb*/
+    }
+
+    /* zvyraznovac */
+    .zvyraznovac {
+        background: #0078D7;
+    }
+
+    /* text-shadow */
+    .text-shadow-1 {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.32)
+    }
+    .text-shadow-1-light {
+        text-shadow: 1px 1px 1px rgba(10, 10, 10, 0.22)
+    }
+
+    .text-shadow, .text-shadow-2 {
+        text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.45)
+    }
+
+    .text-shadow-3 {
+        text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.55)
+    }
+
+
+    .skorostroke {
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.8)
+    }
+
+}
+
+
+@layer components {
+
+    /* main navigation */
+    nav#menu { @apply
+        fixed
+        sm:relative
+        w-full
+        bg-gray-100
+        z-10
+    }
+
+    /* button in main navigation */
+    nav#menu > a { @apply
+        inline-block
+        p-1
+        pt-3
+        m-1
+        lg:m-0
+        text-gray-800
+        font-medium
+        hover:bg-cyan-600
+        hover:text-gray-100
+        hover:border-cyan-600
+        hover:shadow-gray-400
+        hover:shadow-md
+        lg:hover:shadow-none
+        uppercase
+        border
+        border-gray-300
+        rounded
+        lg:rounded-none
+        sm:border-none
+        sm:p-4
+        md:p-5
+        ;
+
+    }
+    nav#menu > a i { @apply
+        block
+        text-xl
+        md:text-2xl
+        lg:text-3xl
+    }
+    nav#menu > a.active { @apply
+        bg-cyan-600
+        border-cyan-600
+        text-gray-100
+        rounded
+        lg:rounded-none
+        shadow-gray-600
+        shadow-md
+        lg:shadow-none
+
+    }
+
+
+    /* main heading */
+    h1 { @apply
+        m-0
+        mb-4
+        p-2
+        font-bold
+        text-center
+        text-shadow
+        text-2xl
+        sm:text-4xl
+        lg:text-5xl
+        xl:text-6xl
+        2xl:text-7xl
+    }
+
+
+    section#content { @apply
+        pt-24
+        sm:pt-1
+        md:pt-2
+        lg:pt-3
+        xl:pt-4
+    }
+
+
+    article { @apply
+        mt-6
+        md:mt-10
+        text-center
+    }
+    article > .article_title { @apply
+        font-bold
+        text-2xl
+        md:text-4xl
+        lg:text-5xl
+        text-gray-800
+        text-shadow-1-light
+    }
+
+
+    /* HERO taky ten veliky SLIDER nahore */
+    article#hero { @apply
+        w-full
+        text-center
+        bg-[url('./src/assets/hero_bg.jpg')]
+        h-72
+        text-gray-100
+        font-bold
+        bg-cover
+        bg-right-bottom
+        p-1
+        mt-6
+    }
+
+    /* SLIDER */
+    #hero ol { @apply
+        inline-block
+        p-5
+        text-left
+    }
+    /* slider card */
+    #hero ol > li { @apply
+        m-2
+        p-6
+        pb-6
+        max-w-4xl
+    }
+    /* slider card heading */
+    #hero ol > li > h2 { @apply
+        text-shadow-2
+        text-2xl
+        sm:text-3xl
+        md:text-4xl
+        lg:text-5xl
+        mb-3
+        md:mb-6
+    }
+    /* slider card text */
+    #hero ol > li > span { @apply
+        skorostroke /* Opticky zamerne potlaceno, je to jen slider, nema byt vyrazny */
+        tracking-wide
+        p-1
+        leading-8
+        sm:leading-10
+        md:leading-loose
+        mt-14
+        lg:mt-7
+        text-lg
+        sm:text-2xl
+        md:text-3xl
+        zvyraznovac
+    }
+
+
+    /* HERO_FOOTER */
+    article#hero_footer { @apply
+        p-3
+        mt-0
+        bg-color1
+        text-gray-50
+        text-center
+        md:mb-5
+        md:p-6
+    }
+    article#hero_footer > h2 { @apply
+        text-xl
+        sm:text-2xl
+        md:text-3xl
+        lg:text-4xl
+        font-sans
+        mb-3
+        md:mb-5
+        drop-shadow-md
+    }
+    article#hero_footer > span { @apply
+        text-4xl
+        md:text-6xl
+        font-bold
+        p-5
+        text-shadow-1
+    }
+    article#hero_footer > p { @apply
+        mt-2
+        md:mt-3
+        text-sm
+        md:text-lg
+        md:font-semibold
+        text-gray-300
+    }
+
+
+    /* NAŠE SLUŽBY */
+    article#services { @apply
+        text-center
+    }
+    article#services > span { @apply
+        text-cyan-900
+        font-semibold
+        font-sans
+        md:text-xl
+    }
+
+    article#services > ul { @apply
+        text-cyan-800
+        p-2
+        inline-block
+    }
+    article#services > ul li { @apply
+        pt-4
+        m-3
+        text-left
+        /*lg:float-left  // added to html only for 1. and 3. <li> */
+        lg:grid
+        lg:w-72
+        lg:pr-2
+        lg:m-1
+        text-cyan-900
+    }
+    article#services > ul i { @apply
+        float-left
+        text-4xl
+        md:text-6xl
+        m-2
+        w-9
+        md:w-24
+        text-cyan-700
+    }
+    article#services > ul h4 { @apply
+        text-xl
+        md:text-2xl
+        lg:text-3xl
+        font-bold
+    }
+    article#services > ul span { @apply
+        font-sans
+    }
+
+
+    /* CENÍK */
+    article#pricing { @apply
+        text-cyan-900
+        md:text-2xl
+        lg:text-3xl
+        xl:text-4xl
+
+    }
+    article#pricing > table { @apply
+        font-sans
+        mr-auto
+        ml-auto
+        mt-8
+    }
+    article#pricing > table th{ @apply
+        underline
+        pb-4
+    }
+    article#pricing > table tr > td:nth-child(1) { @apply
+        text-left
+        pl-1
+    }
+    article#pricing tr > td:nth-child(2) { @apply
+        text-right
+        pr-1
+    }
+    article#pricing > table td:first-child { @apply
+        pr-4
+        sm:pr-16
+        md:pr-56
+        lg:pr-72
+    }
+    article#pricing > table tr:nth-child(even) { @apply
+        bg-gray-200
+    }
+
+
+    article#contact > div { @apply
+        md:flex
+        md:justify-center
+    }
+    article#contact a { @apply
+        text-cyan-900
+        text-3xl
+        block
+        md:inline-block
+        mr-8
+        ml-8
+        md:mr-4
+        md:ml-4
+        md:p-1
+        mt-1
+        pt-3
+        border
+        rounded
+        hover:border
+        hover:bg-cyan-100
+        hover:border-cyan-600
+        hover:shadow-gray-400
+        hover:shadow-sm
+        xl:text-5xl
+        xl:p-5
+    }
+
+    article#contact a > span { @apply
+        text-cyan-900
+        text-sm
+        text-gray-400
+        xl:hidden
+    }
+
+
+    footer { @apply
+        text-gray-300
+        text-right
+        pr-2
+    }
+
+} /* end components */
+
+
+@layer base {
+
+    body { @apply
+        bg-gray-100
+        overflow-x-hidden
+    }
+
+
+    /* for smooth hover effect and smooth responsive resizing */
+    * {
+        transition:0.5s all;
+        -webkit-transition:0.5s all;
+        -moz-transition:0.5s all;
+        -o-transition:0.5s all;
+        -ms-transition:0.5s all;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
