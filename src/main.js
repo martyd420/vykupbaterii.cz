@@ -39,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function(event) {
                 links[i].classList.remove('active');
             }
 
-            /* manually add active class, because IntersectionObserver randomly fails
+            /* manually add active class, because
+               IntersectionObserver randomly fails
             * // bo to neni dobry zpusob jak tohle resit. lepsi podle pozice elementu .top
             *  */
             anchor.classList.add('active')
